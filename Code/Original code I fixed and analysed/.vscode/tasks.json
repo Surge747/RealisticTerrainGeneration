@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build Analyze",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/Analyze/main.cpp",
+        "-o",
+        "${workspaceFolder}/Analyze/Analyze.exe"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Generated task to build Analyze project."
+    },
+    {
+      "label": "build DesignerWorlds",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${workspaceFolder}/Generate/main.cpp",
+        "${workspaceFolder}/Generate/valuenoise.cpp",
+        "-o",
+        "${workspaceFolder}/DesignerWorlds.exe",
+        "-lwinmm"  // Add this line to link against winmm library
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Generated task to build DesignerWorlds project."
+    }
+  ]
+}
